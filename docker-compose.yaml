@@ -1,0 +1,20 @@
+version: "3"
+services:
+  mongodb:  
+    image: 'mongo'
+    volumes: 
+      - grpc-data:/data/db
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: grpc
+      MONGO_INITDB_ROOT_PASSWORD: grpc
+
+  chat-server:
+    container_name: chat-server
+    build: ./chat-server
+    volumes:
+      - ./chat-server:/go/src/chat-server
+      - /root/.vscode-server/extensions
+    stdin_open: true
+    tty: true
+volumes:
+  grpc-data:
