@@ -1,6 +1,3 @@
-[submodule "chat-server"]
-	path = chit-chat-go
-	url = git@github.com:Madslick/chat-chat-go.git
 [submodule "chatter-client-go"]
 	path = chatter-client-go
 	url = git@github.com:Madslick/chit-chat-go-client.git
