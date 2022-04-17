@@ -9,10 +9,12 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: grpc
 
   chat-server:
-    container_name: chat-server
-    build: ./chat-server
+    container_name: chit-chat-go
+    build: 
+      context: ./chit-chat-go
+      dockerfile: ../dockerfiles/chit-chat-go
     volumes:
-      - ./chat-server:/go/src/chat-server
+      - ./chit-chat-go:/go/src/chit-chat-go
       - /root/.vscode-server/extensions
     stdin_open: true
     tty: true
