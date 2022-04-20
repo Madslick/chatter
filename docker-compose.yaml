@@ -4,9 +4,8 @@ services:
     image: 'mongo'
     volumes: 
       - grpc-data:/data/db
-    environment: 
-      MONGO_INITDB_ROOT_USERNAME: grpc
-      MONGO_INITDB_ROOT_PASSWORD: grpc
+    env_file:
+      - ./env/mongodb.env 
 
   chit-chat-go-client:
     container_name: chit-chat-go-client
@@ -16,6 +15,9 @@ services:
     volumes:
       - ./chit-chat-go-client:/go/src/chit-chat-go-client
       - /root/.vscode-server/extensions
+      - /go/bin/
+    env_file:
+      - ./env/chit-chat-go-client.env 
     stdin_open: true
     tty: true
 
@@ -29,6 +31,9 @@ services:
     volumes:
       - ./chit-chat-go:/go/src/chit-chat-go
       - /root/.vscode-server/extensions
+      - /go/bin/
+    env_file:
+      - ./env/chit-chat-go.env 
     stdin_open: true
     tty: true
 volumes:
