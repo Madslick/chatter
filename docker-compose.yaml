@@ -14,8 +14,8 @@ services:
       dockerfile: ../dockerfiles/chit-chat-go-client
     volumes:
       - ./chit-chat-go-client:/go/src/chit-chat-go-client
-      - /root/.vscode-server/extensions
-      - /go/bin/
+      - ccgc-extensions:/root/.vscode-server/extensions
+      - ccgc-go-bin:/go/bin
     env_file:
       - ./env/chit-chat-go-client.env 
     stdin_open: true
@@ -30,11 +30,16 @@ services:
       - 3000:3000
     volumes:
       - ./chit-chat-go:/go/src/chit-chat-go
-      - /root/.vscode-server/extensions
-      - /go/bin/
+      - ccg-extensions:/root/.vscode-server/extensions
+      - ccg-go-bin:/go/bin
     env_file:
       - ./env/chit-chat-go.env 
     stdin_open: true
     tty: true
+
 volumes:
   grpc-data:
+  ccg-extensions:
+  ccgc-extensions:
+  ccg-go-bin:
+  ccgc-go-bin:
