@@ -17,6 +17,7 @@ message ConversationRequest {
 message ConversationResponse {
     string id = 1;
     repeated Client members = 2;
+    repeated ConversationMessage messages = 3;
 }
 
 message Conversation {
@@ -33,6 +34,11 @@ message Message {
     Conversation conversation = 1;
     Client from = 2;
     string content = 3;
+}
+
+message ConversationMessage{
+    Client from = 1;
+    string content = 2;
 }
 
 message ChatEvent {

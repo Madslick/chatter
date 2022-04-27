@@ -7,6 +7,16 @@ services:
     env_file:
       - ./env/mongodb.env 
 
+  protobuilder:
+    container_name: protobuilder
+    build: 
+      context: ./
+      dockerfile: ./dockerfiles/protobuilder
+    volumes:
+      - ./:/go/src/protobuilder
+    stdin_open: true
+    tty: true
+
   chit-chat-go-client:
     container_name: chit-chat-go-client
     build: 
