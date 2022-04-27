@@ -7,8 +7,4 @@ We currently have 2 subrepos: chit-chat-go and chit-chat-go-client. Binary build
 2. Chit-chat-go-client is the frontend cli application mainly used for testing. 
 
 ## Generate the Protobuf file
-protoc -I . --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative  --go_out=./chit-chat-go/internal/chat/pkg --go-grpc_out=./chit-chat-go/internal/chat/pkg chat.proto
-protoc -I . --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative  --go_out=./chit-chat-go/internal/auth/pkg --go-grpc_out=./chit-chat-go/internal/auth/pkg auth.proto
-
-protoc -I . --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative  --go_out=./chit-chat-go-client/pkg --go-grpc_out=./chit-chat-go-client/pkg chat.proto
-protoc -I . --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative  --go_out=./chit-chat-go-client/pkg --go-grpc_out=./chit-chat-go-client/pkg auth.proto
+the protobuilder service will generate all protobuf files and store them in the proper directories when executed by leveraging the build.sh script.

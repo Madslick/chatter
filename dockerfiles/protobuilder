@@ -11,4 +11,4 @@ WORKDIR /go/src/protobuilder
 
 COPY . .
 
-CMD [ "/bin/bash" ]
+CMD [ "/bin/bash", "/go/src/protobuilder/build.sh" ]
