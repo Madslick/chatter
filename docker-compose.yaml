@@ -20,10 +20,10 @@ services:
   chit-chat-go-client:
     container_name: chit-chat-go-client
     build: 
-      context: ./chit-chat-go-client
-      dockerfile: ../dockerfiles/chit-chat-go-client
+      context: ./apps/chit-chat-go-client
+      dockerfile: ../../dockerfiles/chit-chat-go-client
     volumes:
-      - ./chit-chat-go-client:/go/src/chit-chat-go-client
+      - ./apps/chit-chat-go-client:/go/src/chit-chat-go-client
       - ccgc-extensions:/root/.vscode-server/extensions
       - ccgc-go-bin:/go/bin
     env_file:
@@ -34,12 +34,12 @@ services:
   chit-chat-go:
     container_name: chit-chat-go
     build: 
-      context: ./chit-chat-go
-      dockerfile: ../dockerfiles/chit-chat-go
+      context: ./apps/chit-chat-go
+      dockerfile: ../../dockerfiles/chit-chat-go
     ports:
       - 3000:3000
     volumes:
-      - ./chit-chat-go:/go/src/chit-chat-go
+      - ./apps/chit-chat-go:/go/src/chit-chat-go
       - ccg-extensions:/root/.vscode-server/extensions
       - ccg-go-bin:/go/bin
     env_file:

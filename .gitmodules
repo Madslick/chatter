@@ -4,3 +4,9 @@
 [submodule "chit-chat-go-client"]
 	path = chit-chat-go-client
 	url = git@github.com:Madslick/chit-chat-go-client.git
+[submodule "apps/chit-chat-go-client"]
+	path = apps/chit-chat-go-client
+	url = git@github.com:Madslick/chit-chat-go-client.git
+[submodule "apps/chit-chat-go"]
+	path = apps/chit-chat-go
+	url = git@github.com:Madslick/chit-chat-go.git
